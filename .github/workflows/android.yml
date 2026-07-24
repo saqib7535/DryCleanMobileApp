@@ -7,11 +7,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -19,21 +17,23 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: '17'
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '22'
 
-      - run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-      - run: npx cap sync android
+      - name: Sync Capacitor
+        run: npx cap sync android
 
-      - name: Grant Permission
+      - name: Grant Execute Permission
         run: chmod +x android/gradlew
 
-      - name: Build APK
+      - name: Build Debug APK
         run: |
           cd android
           ./gradlew assembleDebug
