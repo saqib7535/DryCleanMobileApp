@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DryClean POS</string>
+    <string name="title_activity_main">DryClean POS</string>
+    <string name="package_name">com.soothmedia.drycleanpos</string>
+    <string name="custom_url_scheme">com.soothmedia.drycleanpos</string>
+</resources>

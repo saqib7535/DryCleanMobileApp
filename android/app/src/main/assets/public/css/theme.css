@@ -1,0 +1,126 @@
+/* ============================================================
+   DryClean POS — Theme
+   CSS custom properties power both the light/dark themes and
+   give screens/components a single palette to draw from.
+   ============================================================ */
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #dbeafe;
+  --color-accent: #f59e0b;
+  --color-accent-dark: #d97706;
+
+  --color-bg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #ffffff;
+
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fee2e2;
+  --color-info: #0891b2;
+  --color-info-bg: #cffafe;
+
+  /* order status palette */
+  --status-pending: #64748b;
+  --status-pending-bg: #f1f5f9;
+  --status-processing: #2563eb;
+  --status-processing-bg: #dbeafe;
+  --status-washing: #0891b2;
+  --status-washing-bg: #cffafe;
+  --status-ironing: #d97706;
+  --status-ironing-bg: #fef3c7;
+  --status-ready: #16a34a;
+  --status-ready-bg: #dcfce7;
+  --status-delivered: #0d9488;
+  --status-delivered-bg: #ccfbf1;
+  --status-cancelled: #dc2626;
+  --status-cancelled-bg: #fee2e2;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.14);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --nav-height: 64px;
+  --header-height: 58px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  --font-main: -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Naskh Arabic", "Noto Nastaliq Urdu", Tahoma, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0b1220;
+  --color-surface: #131c2e;
+  --color-surface-alt: #1a2438;
+  --color-border: #253148;
+  --color-text: #e6ebf5;
+  --color-text-muted: #94a3b8;
+  --color-primary-light: #16233d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0b1220;
+    --color-surface: #131c2e;
+    --color-surface-alt: #1a2438;
+    --color-border: #253148;
+    --color-text: #e6ebf5;
+    --color-text-muted: #94a3b8;
+    --color-primary-light: #16233d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+}
+
+body { font-size: 15px; line-height: 1.45; }
+
+h1, h2, h3, h4 { margin: 0 0 4px; font-weight: 700; }
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font-family: inherit; }
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-pill); }
+
+#app {
+  min-height: 100%;
+  padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + 12px);
+}
+
+.text-muted { color: var(--color-text-muted); }
+.text-danger { color: var(--color-danger); }
+.text-success { color: var(--color-success); }
+.hidden { display: none !important; }

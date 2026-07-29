@@ -1,0 +1,7 @@
+# DryClean POS — issued product keys (dev-only record, never ship this file)
+# format: <timestamp>	<duration>	<key>	<note>
+
+2026-07-25T09:17:23.117Z	Trial - 7 Days	DC-TG44GJV-9FE0F215	test-buyer
+2026-07-25T09:17:23.556Z	Monthly - 30 Days	DC-MKQHRJL-E521AB9C	
+2026-07-25T09:17:23.893Z	Lifetime	DC-L22MZ9J-6F737993	
+2026-07-25T09:24:45.627Z	Trial - 7 Days	DC-TYN2QR3-21818667	rollback-test
